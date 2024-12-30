@@ -16,7 +16,7 @@
 ```python
    score = 85
    if score > 80:
-       print(\"테스트에 합격하셨습니다.\")
+       print("테스트에 합격하셨습니다.")
    # 결과 : 테스트에 합격하셨습니다.
 ```
 
@@ -103,7 +103,7 @@
 [예시]
 ```python
     for i in range(1,6):
-        print(f\"{현재 값 : {i}}\")
+        print(f"{현재 값 : {i}}")
  # 결과 : 현재값 1, 현재값 2 ~ 현재값 5
 ```
 ### 중첩 for문
@@ -120,7 +120,7 @@
 ```python
     for i in range(1,4):
         for j in range(1,3):
-            print(f\"i:{i}, j:{j}\")
+            print(f"i:{i}, j:{j}")
     # i:1, j:1
     # i:1, j:2
     # i:2, j:1
@@ -128,6 +128,60 @@
     # i:3, j:1
     # i:3, j:2
 ```
+
+### enumerate() 함께 사용 시
+* enumerate() 함수는 시퀀스(리스트, 튜플, 문자열 등)를 순회하면서 각 요소의 인덱스와 값을 튜플 형태로 함께 반환하는 내장 함수입니다.
+* 반복문을 돌면서 현재 어떤 인덱스의 값을 처리하고 있는지 알고 싶을 때 용이.
+
+
+* 형식
+```python
+    for 인덱스, 값 in enumerate():
+        실행문
+```
+
+[예시]
+```python
+    items = ["A", "B", "C"]
+    for idx, item in enumerate(items):
+        print(f"인덱스{idx} : {item}")
+    # 인덱스0 : A
+    # 인덱스1 : B
+    # 인덱스2 : C
+```
+
+
+# while문
+* 조건이 참(True)인 동안 특정 코드를 반복 실행하는 반복문으로 반복 횟수를 사전에 알 수 없을때 주로 사용합니다.
+* 조건식의 값이 변하지 않으면 무한 루프가 발생할 수 있음.
+
+
+
+### 기본 for문
+* 종료 조건을 명시적으로 설정해야 안전.
+* 조건식이 False가 되면 반복 종료.
+
+
+* 형식
+```python
+    while 조건식 : 
+        실행문
+```
+
+[예시]
+```python
+    count = 0
+    while count < 5:
+        print(f"Count : {count}")
+        count += 1
+    # Count : 0
+    # Count : 1
+    # Count : 2
+    # Count : 3
+    # Count : 4
+```
+
+
 ### 무한 루프
 * 종료 조건 없이 True를 조건식으로 설정.
 * 반드시 break문으로 종료 조건 설정.
@@ -140,8 +194,8 @@
 [예시]
 ```python
   while True:
-      user_input = input(\"종료하려면 'exit'입력 : \")
-      if user_input == \"exit\":
+      user_input = input("종료하려면 'exit'입력 : ")
+      if user_input == "exit":
             break
 ```
 ### 조건과 else 사용
@@ -155,12 +209,12 @@
 ```
 [예시]
 ```python
-    x = 5\n
+    x = 5
     while x > 0:
         print(x)
         x -= 1
     else:
-        print(\"반복 종료\")
+        print("반복 종료")
 ```
 
 ### break & continue 사용

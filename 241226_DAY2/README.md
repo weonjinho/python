@@ -73,3 +73,112 @@
             print("조건을 만족합니다")
         # 결과 : 조건을 만족합니다.
 ```
+
+
+# for문
+* 반복 가능한 객체(리스트, 튜플, 문자열 등)의 각 요소를 순회하며 코드를 실행하는 반복문.
+* 특정 작업을 반복적으로 수행할 때 사용하고,반복 횟수를 명확히 제어 가능.
+### 기본 for문
+* 반복 대상의 요소를 하나씩 순회하며 실행.
+* 형식
+```python
+  for 변수 in 반복가능 객체:
+            실행문
+```
+[예시]
+```python
+  numbers = [1,2,3,4,5]
+  for num in numbers:
+      print(num * 2)
+  # 결과 : 2,4,6,8,10
+```
+### range()와 함께 사용시
+* range()함수로 반복 횟수를 지정.
+* range(시작값, 종료값, 증가값)
+* 형식
+```python
+    for 변수 in range():
+        실행문
+```
+[예시]
+```python
+    for i in range(1,6):
+        print(f\"{현재 값 : {i}}\")
+ # 결과 : 현재값 1, 현재값 2 ~ 현재값 5
+```
+### 중첩 for문
+* 반복문 안에 또 다른 반복문 포함.
+* 안쪽에 있는 for문이 완전히 실행된 후에 바깥쪽 for문이 실행되면서 반복되는 구조.
+* 형식
+```python
+    for 변수1 in 반복객체1:
+        for 변수2 in 반복객체2:
+              실행문
+```
+
+[예시]
+```python
+    for i in range(1,4):
+        for j in range(1,3):
+            print(f\"i:{i}, j:{j}\")
+    # i:1, j:1
+    # i:1, j:2
+    # i:2, j:1
+    # i:2, j:2
+    # i:3, j:1
+    # i:3, j:2
+```
+### 무한 루프
+* 종료 조건 없이 True를 조건식으로 설정.
+* 반드시 break문으로 종료 조건 설정.
+* 형식
+```python
+   while True:
+        실행문
+```
+
+[예시]
+```python
+  while True:
+      user_input = input(\"종료하려면 'exit'입력 : \")
+      if user_input == \"exit\":
+            break
+```
+### 조건과 else 사용
+* 조건이 False로 바뀌면 else 블록 실행.
+* 형식
+```python 
+   while 조건식:
+        실행문
+   else:
+        실행문
+```
+[예시]
+```python
+    x = 5\n
+    while x > 0:
+        print(x)
+        x -= 1
+    else:
+        print(\"반복 종료\")
+```
+
+### break & continue 사용
+* continue : continue 아래의 코드는 실행되지 않고, 반복문의 조건 검사로 다시 돌아감.
+* break : break를 만나면 반복문을 벗어나게 되고 반복문 종료.
+[예시]
+```python
+    n = 0
+    while n < 10:
+          n += 1
+          if n % 2 == 0:
+              continue   # 짝수는 출력 건너뜀
+          print(n)
+          if n == 7:
+              break    # 7에서 반복 종료.
+```
+
+
+
+
+
